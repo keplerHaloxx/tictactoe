@@ -139,7 +139,7 @@ impl Display for Board {
                             let current_pos = i * 3 + j + 1;
                             return format!("\x1b[2m{}\x1b[0m", current_pos); // dim the color
                         }
-                        c.to_string()
+                        format!("\x1b[1m{}\x1b[0m", c.to_string()) // if cell is occupied
                     })
                     .collect::<Vec<_>>()
                     .join(" | ")
